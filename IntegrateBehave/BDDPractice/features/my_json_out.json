@@ -1,0 +1,104 @@
+[
+{
+  "elements": [
+    {
+      "keyword": "Scenario",
+      "location": "frontend/MyAccountPage/home_page_nav_bars.feature:5",
+      "name": "Verify the navigation bars on home page are visible with smoke",
+      "status": "passed",
+      "steps": [
+        {
+          "keyword": "Given",
+          "location": "frontend/MyAccountPage/home_page_nav_bars.feature:6",
+          "match": {
+            "arguments": [
+              {
+                "name": "page",
+                "value": "https://www.python.org/"
+              }
+            ],
+            "location": "../BDDCommon/CommonSteps/webstepscommon.py:8"
+          },
+          "name": "I go to the page \"https://www.python.org/\"",
+          "result": {
+            "duration": 1.045264482498169,
+            "status": "passed"
+          },
+          "step_type": "given"
+        },
+        {
+          "keyword": "Then",
+          "location": "frontend/MyAccountPage/home_page_nav_bars.feature:7",
+          "match": {
+            "arguments": [
+              {
+                "name": "nav_bar",
+                "value": "main navigation"
+              }
+            ],
+            "location": "frontend/MyAccountPage/steps/my_account_steps.py:72"
+          },
+          "name": "the \"main navigation\" bar should be visible",
+          "result": {
+            "duration": 0.06701827049255371,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "frontend/MyAccountPage/home_page_nav_bars.feature:8",
+          "match": {
+            "arguments": [
+              {
+                "name": "nav_bar",
+                "value": "top navigation"
+              }
+            ],
+            "location": "frontend/MyAccountPage/steps/my_account_steps.py:72"
+          },
+          "name": "the \"top navigation\" bar should be visible",
+          "result": {
+            "duration": 0.03700971603393555,
+            "status": "passed"
+          },
+          "step_type": "then"
+        },
+        {
+          "keyword": "And",
+          "location": "frontend/MyAccountPage/home_page_nav_bars.feature:9",
+          "match": {
+            "arguments": [
+              {
+                "name": "nav_bar",
+                "value": "options"
+              }
+            ],
+            "location": "frontend/MyAccountPage/steps/my_account_steps.py:72"
+          },
+          "name": "the \"options\" bar should be visible",
+          "result": {
+            "duration": 0.03400731086730957,
+            "status": "passed"
+          },
+          "step_type": "then"
+        }
+      ],
+      "tags": [
+        "before_scenario",
+        "after_scenario",
+        "smoke",
+        "TCID-1"
+      ],
+      "type": "scenario"
+    }
+  ],
+  "keyword": "Feature",
+  "location": "frontend/MyAccountPage/home_page_nav_bars.feature:2",
+  "name": "Navigation bars in the home page",
+  "status": "passed",
+  "tags": [
+    "regression"
+  ]
+}
+]

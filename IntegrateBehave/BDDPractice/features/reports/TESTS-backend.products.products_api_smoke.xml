@@ -1,0 +1,35 @@
+<testsuite name="backend.products.products_api_smoke.Products API smoke" tests="2" errors="0" failures="0" skipped="0" time="4.108035" timestamp="2020-05-20T13:10:13.511101" hostname="DESKTOP"><testcase classname="backend.products.products_api_smoke.Products API smoke" name="Verify correct number of products is returned from GET products" status="passed" time="3.097785"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @TCID-24 @after_scenario
+  Scenario: Verify correct number of products is returned from GET products
+    Given I get the number of Available products from the database ... passed in 0.010s
+    When I get the number of Available products from the API ... passed in 3.087s
+    Then the number of products should match ... passed in 0.001s
+
+@scenario.end
+--------------------------------------------------------------------------------
+
+Captured stdout:
+
+Number of products in database is 18
+Page number: 1
+Page number: 2
+No results on page number 2
+Number of products in the API is 18
+
+]]>
+</system-out></testcase><testcase classname="backend.products.products_api_smoke.Products API smoke" name="Verify correct product id is returned for a product" status="passed" time="1.01025"><system-out>
+<![CDATA[
+@scenario.begin
+
+  @TCID-25 @after_scenario
+  Scenario: Verify correct product id is returned for a product
+    Given I get 1 random product from the database ... passed in 0.012s
+    Then I verify the product API returns the correct product by id ... passed in 0.998s
+
+@scenario.end
+--------------------------------------------------------------------------------
+]]>
+</system-out></testcase></testsuite>

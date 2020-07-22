@@ -1,0 +1,12 @@
+Feature: Add valid coupons to cart
+
+  Scenario: Adding 50% off coupon should discount the whole cart by 50%
+    Given I go to the "home" page ... passed in 1.796s
+    And I add 3 random item to cart from the homepage ... passed in 3.332s
+    And I click on cart in the top nav bar and verify cart page opens ... passed in 1.298s
+    And I select 'Free Shipping' option ... passed in 0.301s
+    And I get the total dollar amount of the cart ... passed in 2.058s
+    And I get a valid 50% off coupon ... passed in 0.002s
+    And I apply coupon to the cart ... passed in 0.286s
+    Then the total should be reduced by 50% ... passed in 2.034s
+

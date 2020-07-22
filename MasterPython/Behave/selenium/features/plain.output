@@ -1,0 +1,256 @@
+Feature: Backend tests for the woocommerce API
+
+  Scenario: Verify correct number of products is returned from GET products
+    Given I get the number of Available products from the database ... failed in 8.081s
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 581, in connect
+    sock = socket.create_connection(
+  File "c:\python\lib\socket.py", line 808, in create_connection
+    raise err
+  File "c:\python\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 23, in execute_select
+    self.create_connection()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 19, in create_connection
+    self.connection = pymysql.connect(database=self.database, host=self.host, user=self.db_user, password=self.db_password, port=self.port)
+  File "c:\python\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 29, in execute_select
+    raise Exception("failed running sql query {}. Error {}".format(sql, str(e)))
+Exception: failed running sql query select * from wp_posts where post_type = 'product';. Error (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "c:\python\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "..\steps\products_api_steps.py", line 10, in i_get_number_of_available_products_from_db
+    database_rows = ProductsDAO().get_all_products_from_db()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\dao\productsDAO.py", line 13, in get_all_products_from_db
+    response_sql = self.dbhelper.execute_select(sql)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 31, in execute_select
+    self.connection.close()
+AttributeError: 'NoneType' object has no attribute 'close'
+
+
+  Scenario: Verify correct number of products is returned from GET products with ONE step
+    Given I get the number of Available products from the API and the DATABASE ... failed in 8.023s
+Assertion Failed: FAILED SUB-STEP: Given I get the number of Available products from the database
+Substep info: Traceback (most recent call last):
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 581, in connect
+    sock = socket.create_connection(
+  File "c:\python\lib\socket.py", line 808, in create_connection
+    raise err
+  File "c:\python\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 23, in execute_select
+    self.create_connection()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 19, in create_connection
+    self.connection = pymysql.connect(database=self.database, host=self.host, user=self.db_user, password=self.db_password, port=self.port)
+  File "c:\python\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 29, in execute_select
+    raise Exception("failed running sql query {}. Error {}".format(sql, str(e)))
+Exception: failed running sql query select * from wp_posts where post_type = 'product';. Error (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "c:\python\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "..\steps\products_api_steps.py", line 10, in i_get_number_of_available_products_from_db
+    database_rows = ProductsDAO().get_all_products_from_db()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\dao\productsDAO.py", line 13, in get_all_products_from_db
+    response_sql = self.dbhelper.execute_select(sql)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 31, in execute_select
+    self.connection.close()
+AttributeError: 'NoneType' object has no attribute 'close'
+
+Traceback (of failed substep):
+  File "c:\python\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "c:\python\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "..\steps\products_api_steps.py", line 10, in i_get_number_of_available_products_from_db
+    database_rows = ProductsDAO().get_all_products_from_db()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\dao\productsDAO.py", line 13, in get_all_products_from_db
+    response_sql = self.dbhelper.execute_select(sql)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 31, in execute_select
+    self.connection.close()
+
+
+  Scenario: Passing data from the command line
+    Given I create a new user ... passed in 0.004s
+
+  Scenario: Passing string from the step
+    Given I access string in a step ... passed in 0.001s
+      """
+      This is a string of text to pass to the step. More stringy goodness
+      """
+
+  Scenario: Passing string from the step in JSON
+    Given I add string of a different type ... passed in 0.002s
+      """
+      {"first_name": "Admas", "last_name": "Kinfu", "phone": "4895735934"}
+      """
+
+  Scenario: Verify 'POST/customers' create user
+    Given I generate random email and password ... passed in 0.003s
+    When I call 'create customer' API ... failed in 21.024s
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\urllib3\connection.py", line 159, in _new_conn
+    conn = connection.create_connection(
+  File "c:\python\lib\site-packages\urllib3\util\connection.py", line 84, in create_connection
+    raise err
+  File "c:\python\lib\site-packages\urllib3\util\connection.py", line 74, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\urllib3\connectionpool.py", line 670, in urlopen
+    httplib_response = self._make_request(
+  File "c:\python\lib\site-packages\urllib3\connectionpool.py", line 392, in _make_request
+    conn.request(method, url, **httplib_request_kw)
+  File "c:\python\lib\http\client.py", line 1230, in request
+    self._send_request(method, url, body, headers, encode_chunked)
+  File "c:\python\lib\http\client.py", line 1276, in _send_request
+    self.endheaders(body, encode_chunked=encode_chunked)
+  File "c:\python\lib\http\client.py", line 1225, in endheaders
+    self._send_output(message_body, encode_chunked=encode_chunked)
+  File "c:\python\lib\http\client.py", line 1004, in _send_output
+    self.send(msg)
+  File "c:\python\lib\http\client.py", line 944, in send
+    self.connect()
+  File "c:\python\lib\site-packages\urllib3\connection.py", line 187, in connect
+    conn = self._new_conn()
+  File "c:\python\lib\site-packages\urllib3\connection.py", line 171, in _new_conn
+    raise NewConnectionError(
+urllib3.exceptions.NewConnectionError: <urllib3.connection.HTTPConnection object at 0x0413B580>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\requests\adapters.py", line 439, in send
+    resp = conn.urlopen(
+  File "c:\python\lib\site-packages\urllib3\connectionpool.py", line 724, in urlopen
+    retries = retries.increment(
+  File "c:\python\lib\site-packages\urllib3\util\retry.py", line 439, in increment
+    raise MaxRetryError(_pool, url, error or ResponseError(cause))
+urllib3.exceptions.MaxRetryError: HTTPConnectionPool(host='mystore.local', port=80): Max retries exceeded with url: /wp-json/wc/v3/customers?oauth_consumer_key=ck_9b650e817b17c325547303f18a32a7433c236739&oauth_timestamp=1595427349&oauth_nonce=c57e04d5867c2b81b9afabb59e441adb049a7e54&oauth_signature_method=HMAC-SHA256&oauth_signature=IolkDvSifAdmYuUivxp4IkOmDaLsY3pV7QLCejgalXs%3D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0413B580>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "c:\python\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "..\steps\users_api_steps.py", line 19, in i_call_create_customer_api
+    create_user_response = user_api.create_user(payload)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\apis\user_api.py", line 5, in create_user
+    return WooRequestHelper().post(wc_endpoint='customers', params=data)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\wooRequestHelper.py", line 44, in post
+    self.response = self.wcapi.post(wc_endpoint, data=params)
+  File "c:\python\lib\site-packages\woocommerce\api.py", line 112, in post
+    return self.__request("POST", endpoint, data, **kwargs)
+  File "c:\python\lib\site-packages\woocommerce\api.py", line 94, in __request
+    return request(
+  File "c:\python\lib\site-packages\requests\api.py", line 61, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "c:\python\lib\site-packages\requests\sessions.py", line 530, in request
+    resp = self.send(prep, **send_kwargs)
+  File "c:\python\lib\site-packages\requests\sessions.py", line 643, in send
+    r = adapter.send(request, **kwargs)
+  File "c:\python\lib\site-packages\requests\adapters.py", line 516, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPConnectionPool(host='mystore.local', port=80): Max retries exceeded with url: /wp-json/wc/v3/customers?oauth_consumer_key=ck_9b650e817b17c325547303f18a32a7433c236739&oauth_timestamp=1595427349&oauth_nonce=c57e04d5867c2b81b9afabb59e441adb049a7e54&oauth_signature_method=HMAC-SHA256&oauth_signature=IolkDvSifAdmYuUivxp4IkOmDaLsY3pV7QLCejgalXs%3D (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x0413B580>: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))
+
+Captured logging:
+INFO:root:111
+INFO:root:Params: {'email': 'testuser_ioixjbrbqm@gmail.com', 'password': 'imCjmUFAeTyEiwuazRxm'}
+INFO:root:111
+
+  Scenario: Generate new test data set and use it to register x number of users and check they can log in to the system
+
+  Scenario: Generate new test data set and use export it into a CSV file
+    Given I create "5" new users using a test data creator ... failed in 8.076s
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 581, in connect
+    sock = socket.create_connection(
+  File "c:\python\lib\socket.py", line 808, in create_connection
+    raise err
+  File "c:\python\lib\socket.py", line 796, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [WinError 10061] No connection could be made because the target machine actively refused it
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 23, in execute_select
+    self.create_connection()
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 19, in create_connection
+    self.connection = pymysql.connect(database=self.database, host=self.host, user=self.db_user, password=self.db_password, port=self.port)
+  File "c:\python\lib\site-packages\pymysql\__init__.py", line 94, in Connect
+    return Connection(*args, **kwargs)
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 325, in __init__
+    self.connect()
+  File "c:\python\lib\site-packages\pymysql\connections.py", line 630, in connect
+    raise exc
+pymysql.err.OperationalError: (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 29, in execute_select
+    raise Exception("failed running sql query {}. Error {}".format(sql, str(e)))
+Exception: failed running sql query SELECT COUNT(*) FROM local.wp_users;. Error (2003, "Can't connect to MySQL server on 'localhost' ([WinError 10061] No connection could be made because the target machine actively refused it)")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\python\lib\site-packages\behave\model.py", line 1329, in run
+    match.run(runner.context)
+  File "c:\python\lib\site-packages\behave\matchers.py", line 98, in run
+    self.func(context, *args, **kwargs)
+  File "..\steps\test_data_creator_steps.py", line 10, in step_impl
+    context.db_users = UsersDAO().get_number_of_users() ## save the current number of users before they are added in UI
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\dao\usersDAO.py", line 17, in get_number_of_users
+    return self.dbhelper.execute_select(sql)
+  File "C:\Users\Matt\PycharmProjects\MasterPython\Behave\selenium\helpers\dbHelpers.py", line 31, in execute_select
+    self.connection.close()
+AttributeError: 'NoneType' object has no attribute 'close'
+

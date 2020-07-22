@@ -1,0 +1,1 @@
+behave --no-capture --no-logcapture --tags=my_products_smoke --no-skipped --junit

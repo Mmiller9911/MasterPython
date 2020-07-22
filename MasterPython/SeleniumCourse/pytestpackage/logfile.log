@@ -1,0 +1,12 @@
+2020-05-05 12:01:49,366 : INFO : SeleniumCourse.pytestpackage.test_logging : Information statement
+2020-05-05 12:01:49,366 : WARNING : SeleniumCourse.pytestpackage.test_logging : Warning statement
+2020-05-05 12:01:49,366 : ERROR : SeleniumCourse.pytestpackage.test_logging : Major error seen
+2020-05-05 12:01:49,366 : CRITICAL : SeleniumCourse.pytestpackage.test_logging : Critical issue
+2020-05-05 12:03:30,146 : DEBUG : SeleniumCourse.pytestpackage.test_logging : A debug statement is executed
+2020-05-05 12:03:30,146 : INFO : SeleniumCourse.pytestpackage.test_logging : Information statement
+2020-05-05 12:03:30,146 : WARNING : SeleniumCourse.pytestpackage.test_logging : Warning statement
+2020-05-05 12:03:30,146 : ERROR : SeleniumCourse.pytestpackage.test_logging : Major error seen
+2020-05-05 12:03:30,151 : CRITICAL : SeleniumCourse.pytestpackage.test_logging : Critical issue
+2020-05-05 12:16:26,430 : INFO : SeleniumCourse.pytestpackage.BaseClass : Matthew
+2020-05-05 12:17:29,334 : INFO : SeleniumCourse.pytestpackage.BaseClass : ['Matthew', 'Miller', 'Mils.com']
+2020-05-05 12:35:08,424 : INFO : test_editprofile : ['Matthew', 'Miller', 'Mils.com']

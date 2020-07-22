@@ -1,0 +1,32 @@
+Review each file and check it makes sense and has good examples
+Generate a test data file
+Use files, json + csv + html
+Common usages for python!
+Learn about the python virtual environment
+Test cafe - front end auto for js
+https://docs.python.org/3/tutorial/modules.html#packages
+
+Fix TypeChecking - just needs the rest of the code from the course
+Add music to the generators file, id3reader_p3 - just needs the rest of the code from the course
+
+
+#  Artificial intelligence with machine learning uses python
+#  Python is simple, also uses many less lines to accomplish something
+#  Python stack is used much more often in development so the testing is easier on the same stack to align
+#  Pycharm is super fast compared to other ides
+
+
+#  Protractor and Appium are wrappers over selenium - people think they are independant
+
+#  an element may not be found on the page - it may be because it is inside a frame, switch to the frame to handle
+
+
+Selenium Features**
+· Selenium is open Source Automation Testing tool
+· It is exclusively for Web Based applications.
+· Selenium supports multiple browsers -
+Chrome, Firefox, Internet Explorer, Safari
+· Selenium works with Multiple Platforms
+Windows, Apple OS X, Linux
+· Selenium can be coded in multiple languages -
+Java, C#, Python, Javascript, php, Ruby
